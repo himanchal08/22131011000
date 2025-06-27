@@ -70,13 +70,13 @@ const ShortenUrlPage = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:3001/shorturls", {
+      const response = await fetch("http://localhost:5000/api/shorturls", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          longUrl: mainUrl,
+          url: mainUrl,
           validity: 30,
         }),
       });
@@ -88,7 +88,7 @@ const ShortenUrlPage = () => {
         const newUrl = {
           id: Date.now(),
           originalUrl: mainUrl,
-          shortUrl: `http://localhost:3001/${data.shortcode}`,
+          shortUrl: `http://localhost:5000/${data.shortcode}`,
           shortcode: data.shortcode,
           expiryTime: expiryTime.toLocaleString(),
           success: true,
@@ -217,13 +217,13 @@ const ShortenUrlPage = () => {
     const results = [];
     for (const input of validInputs) {
       try {
-        const response = await fetch("http://localhost:3001/shorturls", {
+        const response = await fetch("http://localhost:5000/api/shorturls", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            longUrl: input.longUrl,
+            url: input.longUrl,
             validity: input.validity || 30,
             shortcode: input.shortcode || undefined,
           }),
@@ -238,7 +238,7 @@ const ShortenUrlPage = () => {
           results.push({
             id: Date.now() + Math.random(),
             originalUrl: input.longUrl,
-            shortUrl: `http://localhost:3001/${data.shortcode}`,
+            shortUrl: `http://localhost:5000/${data.shortcode}`,
             shortcode: data.shortcode,
             expiryTime: expiryTime.toLocaleString(),
             success: true,

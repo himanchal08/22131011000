@@ -48,7 +48,7 @@ const StatsPage = () => {
   const fetchAllStats = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:3001/shorturls");
+      const response = await fetch("http://localhost:5000/api/shorturls");
 
       if (response.ok) {
         const data = await response.json();
@@ -70,7 +70,7 @@ const StatsPage = () => {
     try {
       setLoadingDetails((prev) => ({ ...prev, [shortcode]: true }));
       const response = await fetch(
-        `http://localhost:3001/shorturls/${shortcode}`
+        `http://localhost:5000/api/shorturls/${shortcode}`
       );
 
       if (response.ok) {
@@ -353,7 +353,7 @@ const StatsPage = () => {
                     </Avatar>
                     <Box>
                       <Link
-                        href={`http://localhost:3001/${stat.shortcode}`}
+                        href={`http://localhost:5000/api/${stat.shortcode}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         sx={{
@@ -369,7 +369,7 @@ const StatsPage = () => {
                       <IconButton
                         onClick={() =>
                           copyToClipboard(
-                            `http://localhost:3001/${stat.shortcode}`
+                            `http://localhost:5000/api/${stat.shortcode}`
                           )
                         }
                         size="small"
