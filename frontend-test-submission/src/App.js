@@ -118,7 +118,7 @@ function App() {
                 backgroundClip: "text",
               }}
             >
-              Linkly
+              Url Shortner
             </Typography>
           </Toolbar>
         </AppBar>
@@ -162,7 +162,7 @@ function App() {
               opacity: 0.9,
             }}
           >
-            Linkly is a reliable, efficient, and user-friendly URL shortening
+            Url Shortner is a reliable, efficient, and user-friendly URL shortening
             service designed for professionals and businesses. Simplify your
             links and track performance with ease.
           </Typography>
