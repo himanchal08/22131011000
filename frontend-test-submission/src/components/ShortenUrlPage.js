@@ -415,39 +415,22 @@ const ShortenUrlPage = () => {
               }}
             />
           </Box>
-
-          <Typography
-            variant="body2"
-            sx={{
-              color: "#64748b",
-              textAlign: "center",
-              fontWeight: 500,
-            }}
-          >
-            You can create{" "}
-            <span style={{ color: "#ec4899", fontWeight: 600 }}>05</span> more
-            links.{" "}
-            <Link href="#" sx={{ color: "#3b82f6", fontWeight: 600 }}>
-              Register
-            </Link>{" "}
-            Now to enjoy Unlimited usage
-          </Typography>
         </Box>
       </Box>
 
       {/* Bulk URL Creation */}
       <Typography
         variant="h4"
-        component="h2"
+        component="h1"
         gutterBottom
         sx={{
           fontWeight: 700,
           color: "#f8fafc",
-          mb: 3,
+          mb: 6,
           letterSpacing: "-0.025em",
         }}
       >
-        Bulk URL Creation
+        URL Shortener
       </Typography>
 
       <Card sx={{ mb: 4 }}>
